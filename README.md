@@ -1,4 +1,4 @@
-# alternative-to-duckdns
+# Alternative to DuckDNS
 
 There are two alternatives to duckdns, depending on the service you want to use:
 * [SERVEO](https://serveo.net)

@@ -1,7 +1,12 @@
+![Version](https://img.shields.io/badge/Version-2.0-green)
+[![hassiohelp](https://img.shields.io/badge/Forum-hassiohelp-blue)](https://hassiohelp.eu/2020/02/08/alternativa-ducksdns-ngrok/)
+[![toUse](https://img.shields.io/badge/toUse-ngrok-orange)](https://hassiohelp.eu/2020/02/08/alternativa-ducksdns-ngrok/)
+[![Telegram](https://img.shields.io/badge/Need-buttonTelegram-lightgrey)](https://hassiohelp.eu/2019/03/17/bot-telegram/)
+
 # Alternative to DuckDNS
 
 There are two alternatives to duckdns, depending on the service you want to use:
-* [SERVEO](https://serveo.net)
+* [SERVEO](https://serveo.net) ... **temporarily disabled due to phishing**
 * [NGROK](https://ngrok.com/)
 
 The guides to follow are respectively:
@@ -11,4 +16,8 @@ The guides to follow are respectively:
 ...as well as the reference to the forum (only for ngrok):
 * [ngrok forum](https://forum.hassiohelp.eu/showthread.php?tid=542)
 
-![button telegram](https://i.imgur.com/Ma0aJxL.jpg)
+## Example images in Telegram bot
+
+| serveo | ngrok |
+|    --    |    --    |
+|  ![buttonTelegram](https://i.imgur.com/Ma0aJxL.jpg)  |  ![buttonTelegram](https://i.imgur.com/vcLSrTp.jpg)  |

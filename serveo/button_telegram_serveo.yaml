@@ -1,0 +1,104 @@
+###########################################################################################################
+### SERVEO
+###########################################################################################################
+# automation:
+  - alias: Button Bot Serveo
+    hide_entity: true
+    initial_state: 'on'
+    trigger:
+      - platform: event
+        event_type: telegram_callback
+        event_data:
+          data: /serveo
+    action:
+      - service: notify.telegram
+        data_template:
+          title: '*Serveo Service:*'
+          message: "Choose your commands"
+          data:
+            inline_keyboard:
+            - '{{ "\U0001F3E0" }} ServeoHome:/serveohome, {{ "\U0001F4BB" }} ServeoIDE:/serveoide'
+            - '{{ "\u2705\ufe0f" }} ServeoALL:/serveoall, {{ "\u274c\ufe0f" }} ServeoOFF:/serveooff'
+            - '{{ "\u21a9\ufe0f" }} Home:/home'
+
+####################################################################### 
+  - alias: Button Serveo Home
+    hide_entity: true
+    initial_state: 'on'
+    trigger:
+      - platform: event
+        event_type: telegram_callback
+        event_data:
+          data: /serveohome
+    action:
+      - service: shell_command.startserveohome
+      - delay: '00:00:03'
+      - service: notify.telegram
+        data_template:
+          title: '*START Serveo HOME*'
+          message: "ON (XXX.serveo.net) at {{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+          data:
+            inline_keyboard:
+              - '{{ "\u2b06\ufe0f" }} UpLevel:/serveo, {{ "\u21a9\ufe0f" }} Home:/home'
+
+
+#######################################################################
+  - alias: Button Serveo IDE
+    hide_entity: true
+    initial_state: 'on'
+    trigger:
+      - platform: event
+        event_type: telegram_callback
+        event_data:
+          data: /serveoide
+    action:
+      - service: shell_command.startserveoide
+      - delay: '00:00:03'
+      - service: notify.telegram
+        data_template:
+          title: '*START Serveo IDE*'
+          message: "ON (YYY.serveo.net) at {{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+          data:
+            inline_keyboard:
+              - '{{ "\u2b06\ufe0f" }} UpLevel:/serveo, {{ "\u21a9\ufe0f" }} Home:/home'
+
+
+#######################################################################
+  - alias: Button Serveo ALL
+    hide_entity: true
+    initial_state: 'on'
+    trigger:
+      - platform: event
+        event_type: telegram_callback
+        event_data:
+          data: /serveoall
+    action:
+      - service: shell_command.startserveoall
+      - delay: '00:00:03'
+      - service: notify.telegram
+        data_template:
+          title: '*START Serveo ALL*'
+          message: "ON (XXX.serveo.net - YYY.serveo.net - ZZZ.serveo.net) at {{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+          data:
+            inline_keyboard:
+              - '{{ "\u2b06\ufe0f" }} UpLevel:/serveo, {{ "\u21a9\ufe0f" }} Home:/home'
+
+########################################################################
+  - alias: Button Serveo OFF
+    hide_entity: true
+    initial_state: 'on'
+    trigger:
+      - platform: event
+        event_type: telegram_callback
+        event_data:
+          data: /serveooff
+    action:
+      - service: shell_command.stopserveo
+      - delay: '00:00:03'
+      - service: notify.telegram
+        data_template:
+          title: '*STOP Serveo.net*'
+          message: "OFF at {{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+          data:
+            inline_keyboard:
+              - '{{ "\u2b06\ufe0f" }} UpLevel:/serveo, {{ "\u21a9\ufe0f" }} Home:/home'

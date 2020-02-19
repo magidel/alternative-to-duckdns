@@ -1,0 +1,16 @@
+########################################################################
+### SHELL COMMAND
+########################################################################
+
+
+
+########################################################################
+### SERVEO
+########################################################################
+startserveohome: 'ssh -o ServerAliveInterval=60 -o StrictHostKeyChecking=no -R XXX:80:localhost:8123 serveo.net'
+
+startserveoide: 'ssh -o ServerAliveInterval=60 -o StrictHostKeyChecking=no -R YYY:80:localhost:8321 serveo.net'
+
+startserveoall: 'ssh -o ServerAliveInterval=60 -o StrictHostKeyChecking=no -R XXX:80:localhost:8123 -R YYY:80:localhost:8321 -R ZZZ:80:localhost:9541 serveo.net'
+
+stopserveo: 'pkill -f ''ssh.*-R'''

@@ -6,7 +6,7 @@
 # Alternative to DuckDNS
 
 There are two alternatives to duckdns, depending on the service you want to use:
-* [SERVEO](https://serveo.net) ... **temporarily disabled due to phishing**
+* [SERVEO](https://serveo.net) -> _**temporarily disabled due to phishing**_
 * [NGROK](https://ngrok.com/)
 
 The guides to follow are respectively:
@@ -16,8 +16,9 @@ The guides to follow are respectively:
 ...as well as the reference to the forum (only for ngrok):
 * [ngrok forum](https://forum.hassiohelp.eu/showthread.php?tid=542)
 
-## Example images in Telegram bot
+Remember that to use this alternative you will need to activate the [telegram buttons](https://hassiohelp.eu/2019/03/17/bot-telegram/)
 
+## Example images in Telegram bot
 | serveo | ngrok |
 |    --    |    --    |
 |  ![buttonTelegram](https://i.imgur.com/Ma0aJxL.jpg)  |  ![buttonTelegram](https://i.imgur.com/vcLSrTp.jpg)  |

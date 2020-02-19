@@ -1,0 +1,73 @@
+###########################################################################################################
+### NGROK
+###########################################################################################################
+# automation:
+  - alias: Button Bot ngrok
+    initial_state: 'on'
+    trigger:
+      - platform: event
+        event_type: telegram_callback
+        event_data:
+          data: /ngrok
+    action:
+      - service: notify.telegram
+        data_template:
+          # title: '*ngrok Service*'
+          message: |-
+            
+            {{ "\u26D3\ufe0f" }} *ngrok Service*
+            
+            PublicURL: {{ states('sensor.ngrok_url') }}
+            
+          data:
+            inline_keyboard:
+            - '{{ "\u2705\ufe0f" }} ngrokON:/ngrokon, {{ "\u274c\ufe0f" }} ngrokOFF:/ngrokoff'
+            - '{{ "\u21a9\ufe0f" }} Home:/home'
+
+########################################################################
+  - alias: Telegram ngrok ON
+    initial_state: 'on'
+    trigger:
+      - platform: event
+        event_type: telegram_callback
+        event_data:
+          data: /ngrokon
+    action:
+      - service: hassio.addon_start
+        data:
+          addon: "XXX_ngrok"
+      - delay: '00:00:15'
+      - service: notify.telegram
+        data_template:
+          title: '*START ngrok*'
+          message: |-
+            
+            PublicURL: {{ states('sensor.ngrok_url') }}
+            Datetime {{ now().strftime('%Y-%m-%d %H:%M:%S') }}
+          data:
+            inline_keyboard:
+              - '{{ "\u2b06\ufe0f" }} UpLevel:/ngrok, {{ "\u21a9\ufe0f" }} Home:/home'
+
+########################################################################
+  - alias: Telegram ngrok OFF
+    initial_state: 'on'
+    trigger:
+      - platform: event
+        event_type: telegram_callback
+        event_data:
+          data: /ngrokoff
+    action:
+      - service: hassio.addon_stop
+        data:
+          addon: "XXX_ngrok"
+      - delay: '00:00:15'
+      - service: notify.telegram
+        data_template:
+          title: '*STOP ngrok*'
+          message: |-
+            
+            PublicURL: {{ states('sensor.ngrok_url') }}
+            Datetime {{ now().strftime('%Y-%m-%d %H:%M:%S') }}
+          data:
+            inline_keyboard:
+              - '{{ "\u2b06\ufe0f" }} UpLevel:/ngrok, {{ "\u21a9\ufe0f" }} Home:/home'

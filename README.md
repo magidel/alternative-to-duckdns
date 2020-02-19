@@ -1,4 +1,5 @@
 ![Version](https://img.shields.io/badge/Version-2.0-green)
+![Platform](https://img.shields.io/badge/Platform-Hassio-yellow)
 [![hassiohelp](https://img.shields.io/badge/Forum-hassiohelp-blue)](https://hassiohelp.eu/2020/02/08/alternativa-ducksdns-ngrok/)
 [![toUse](https://img.shields.io/badge/toUse-ngrok-orange)](https://hassiohelp.eu/2020/02/08/alternativa-ducksdns-ngrok/)
 [![Telegram](https://img.shields.io/badge/Need-buttonTelegram-lightgrey)](https://hassiohelp.eu/2019/03/17/bot-telegram/)
